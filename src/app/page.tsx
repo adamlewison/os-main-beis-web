@@ -86,7 +86,7 @@ export default function Home() {
   return (
     <div className="torah-theme text-white overflow-x-hidden relative">
       {/* Header */}
-  <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/75 to-transparent backdrop-blur-sm">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/75 to-transparent backdrop-blur-sm">
         <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Image
@@ -173,7 +173,7 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-  <section className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden bg-[linear-gradient(180deg,#0c0f11,#101416_65%,#141819)]">
+      <section className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden bg-[linear-gradient(180deg,#0c0f11,#101416_65%,#141819)]">
         <video
           ref={videoRef}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
@@ -210,41 +210,114 @@ export default function Home() {
       </section>
 
       {/* Program */}
-      <section id="program" className="py-28 px-4 relative overflow-hidden z-10 torah-paper-section">
+      <section
+        id="program"
+        className="py-28 px-4 relative overflow-hidden z-10 torah-paper-section"
+      >
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
           <div className="torah-paper-panel p-10 md:p-12 shadow-md">
-            <h2 className="text-5xl md:text-6xl font-black mb-10 heading-gradient-torah torah-heading-shadow">The Program</h2>
+            <h2 className="text-5xl md:text-6xl font-black mb-10 heading-gradient-torah torah-heading-shadow">
+              The Program
+            </h2>
             <div className="space-y-6 text-[15px] md:text-base leading-relaxed ink-soft">
-              <p className="ink-strong text-lg md:text-xl leading-relaxed">For the serious student already preparing Gemara with Rashi and Tosfos who seeks to become fully independent in learning.</p>
-              <p>The Beis Midrash is a living, classical environment—serious energy, a large core of motivated talmidim and a culture of sincerity, discipline and simchas haTorah. Three daily sedorim form a deliberate arc: depth that trains structure and clarity; breadth that builds pace and retention; and consolidation that fixes the derech in place.</p>
-              <p>A high rebbi–talmid ratio together with highly accessible Rabbeim means real hadrachah. Guidance is not an occasional meeting but an ongoing conversation in the Beis Midrash, before and after shiur, and in regular one‑on‑one sessions.</p>
-              <p>Shiurim in Gemara, Halacha and Hashkafa are sourced, text‑based and interactive. The talmid is trained to read inside, to develop a disciplined map of the sugya, to test sevara and then to express it with precision. Philosophy, ethics and history are approached from their primary sources.</p>
-              <p>The process moves from Gemara → Rashi → Tosfos → Rishonim → Acharonim, with method made explicit so that the talmid can reproduce it on his own. Shabbatonim and shared experiences with the Rabbeim deepen the bonds and reinforce growth.</p>
-              <p className="text-sm bg-white/65 border border-[#dfddd6] rounded-xl p-5 ink-muted"><span className="text-gold-strong font-semibold">Goal:</span> להעמיד את התלמיד על רגליו – to stand the talmid on his own feet in sugya, seder and inner avodah.</p>
+              <p className="ink-strong text-lg md:text-xl leading-relaxed">
+                For the serious student already preparing Gemara with Rashi and
+                Tosfos who seeks to become fully independent in learning.
+              </p>
+              <p>
+                The Beis Midrash is a living, classical environment—serious
+                energy, a large core of motivated talmidim and a culture of
+                sincerity, discipline and simchas haTorah. Three daily sedorim
+                form a deliberate arc: depth that trains structure and clarity;
+                breadth that builds pace and retention; and consolidation that
+                fixes the derech in place.
+              </p>
+              <p>
+                A high rebbi–talmid ratio together with highly accessible
+                Rabbeim means real hadrachah. Guidance is not an occasional
+                meeting but an ongoing conversation in the Beis Midrash, before
+                and after shiur, and in regular one‑on‑one sessions.
+              </p>
+              <p>
+                Shiurim in Gemara, Halacha and Hashkafa are sourced, text‑based
+                and interactive. The talmid is trained to read inside, to
+                develop a disciplined map of the sugya, to test sevara and then
+                to express it with precision. Philosophy, ethics and history are
+                approached from their primary sources.
+              </p>
+              <p>
+                The process moves from Gemara → Rashi → Tosfos → Rishonim →
+                Acharonim, with method made explicit so that the talmid can
+                reproduce it on his own. Shabbatonim and shared experiences with
+                the Rabbeim deepen the bonds and reinforce growth.
+              </p>
+              <p className="text-sm bg-white/65 border border-[#dfddd6] rounded-xl p-5 ink-muted">
+                <span className="text-gold-strong font-semibold">Goal:</span>{" "}
+                להעמיד את התלמיד על רגליו – to stand the talmid on his own feet
+                in sugya, seder and inner avodah.
+              </p>
             </div>
           </div>
           <div className="relative h-[560px] rounded-3xl overflow-hidden border border-[#e2e0da] shadow-xl">
-            <Image src="/images/whole-program-on-hike.jpg" alt="Talmidim hiking" fill className="object-cover" />
+            <Image
+              src="/images/whole-program-on-hike.jpg"
+              alt="Talmidim hiking"
+              fill
+              className="object-cover"
+            />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,15,17,0)_0%,rgba(12,15,17,.55)_100%)]" />
-            <div className="absolute bottom-4 left-4 right-4 text-[13px] md:text-sm ink-muted bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-[#e2e0da]">Independence is built in stages: text → structure → sevara → articulation → retention.</div>
+            <div className="absolute bottom-4 left-4 right-4 text-[13px] md:text-sm ink-muted bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-[#e2e0da]">
+              Independence is built in stages: text → structure → sevara →
+              articulation → retention.
+            </div>
           </div>
         </div>
       </section>
 
       {/* Learning Pillars */}
-      <section id="learning" className="py-32 px-4 relative z-10 bg-[linear-gradient(140deg,#f5f5f2,#ecebe7,#f2efe8)] text-[#1f2325]">
+      <section
+        id="learning"
+        className="py-32 px-4 relative z-10 bg-[linear-gradient(140deg,#f5f5f2,#ecebe7,#f2efe8)] text-[#1f2325]"
+      >
         <div className="max-w-5xl mx-auto space-y-14">
           <div>
-            <h2 className="text-4xl md:text-5xl font-black mb-6 heading-gradient-torah">Iyun</h2>
-            <p className="leading-relaxed text-[15px] md:text-base ink-soft">We learn thoroughly so the talmid acquires a reproducible <span className="italic">derech halimud</span>. Shiur is text‑driven with genuine give‑and‑take; the method is not hidden behind polished results. We begin with the sugya inside, progress through Rashi and Tosfos, and in advanced settings move into Rishonim and then Acharonim—explaining, contrasting, isolating the yesod and testing each sevara for necessity and scope.</p>
+            <h2 className="text-4xl md:text-5xl font-black mb-6 heading-gradient-torah">
+              Iyun
+            </h2>
+            <p className="leading-relaxed text-[15px] md:text-base ink-soft">
+              We learn thoroughly so the talmid acquires a reproducible{" "}
+              <span className="italic">derech halimud</span>. Shiur is
+              text‑driven with genuine give‑and‑take; the method is not hidden
+              behind polished results. We begin with the sugya inside, progress
+              through Rashi and Tosfos, and in advanced settings move into
+              Rishonim and then Acharonim—explaining, contrasting, isolating the
+              yesod and testing each sevara for necessity and scope.
+            </p>
           </div>
           <div>
-            <h2 className="text-4xl md:text-5xl font-black mb-6 heading-gradient-torah">Bekius</h2>
-            <p className="leading-relaxed text-[15px] md:text-base ink-soft">Breadth is structured—not a race. Planned cycles and scheduled review anchor retention. An annual siyum on the masechta learned b'iyun is paired with parallel coverage to widen familiarity while reinforcing disciplined review habits that last beyond the program.</p>
+            <h2 className="text-4xl md:text-5xl font-black mb-6 heading-gradient-torah">
+              Bekius
+            </h2>
+            <p className="leading-relaxed text-[15px] md:text-base ink-soft">
+              Breadth is structured—not a race. Planned cycles and scheduled
+              review anchor retention. An annual siyum on the masechta learned
+              b'iyun is paired with parallel coverage to widen familiarity while
+              reinforcing disciplined review habits that last beyond the
+              program.
+            </p>
           </div>
-            <div>
-            <h2 className="text-4xl md:text-5xl font-black mb-6 heading-gradient-torah">Hashkafa & Mussar</h2>
-            <p className="leading-relaxed text-[15px] md:text-base ink-soft">Regular vaadim open inyanim of hashkafa and mussar from primary sources. Individual guidance remains central: most talmidim meet weekly one‑on‑one with a Rebbi or Mashgiach; any question can be asked, including foundational areas of emunah. Relationships are real, and the personal development is paced with the growth in learning.</p>
+          <div>
+            <h2 className="text-4xl md:text-5xl font-black mb-6 heading-gradient-torah">
+              Hashkafa & Mussar
+            </h2>
+            <p className="leading-relaxed text-[15px] md:text-base ink-soft">
+              Regular vaadim open inyanim of hashkafa and mussar from primary
+              sources. Individual guidance remains central: most talmidim meet
+              weekly one‑on‑one with a Rebbi or Mashgiach; any question can be
+              asked, including foundational areas of emunah. Relationships are
+              real, and the personal development is paced with the growth in
+              learning.
+            </p>
           </div>
         </div>
       </section>
@@ -309,14 +382,43 @@ export default function Home() {
       </section>
 
       {/* Outcomes */}
-      <section id="outcomes" className="py-32 px-4 relative z-10 bg-[linear-gradient(150deg,#f5f5f2,#ecebe7_55%,#f2efe8)] text-[#1f2325]">
+      <section
+        id="outcomes"
+        className="py-32 px-4 relative z-10 bg-[linear-gradient(150deg,#f5f5f2,#ecebe7_55%,#f2efe8)] text-[#1f2325]"
+      >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-black mb-12 text-center heading-gradient-torah torah-heading-shadow">After 1–2 Years</h2>
+          <h2 className="text-5xl md:text-6xl font-black mb-12 text-center heading-gradient-torah torah-heading-shadow">
+            After 1–2 Years
+          </h2>
           <div className="torah-paper-panel p-10 md:p-12 space-y-6 leading-relaxed text-[15px] md:text-base ink-soft">
-            <p><span className="font-semibold ink-strong">Independent Learning:</span> You can prepare Gemara, Rashi and Tosfos with clarity, trace the structure of a sugya, engage Rishonim and Acharonim responsibly and articulate the sevara with precision.</p>
-            <p><span className="font-semibold ink-strong">Advanced Level:</span> You are ready for advanced mainstream yeshiva shiurim and demanding chavrusos; the <span className="italic">derech halimud</span> has become your own process.</p>
-            <p><span className="font-semibold ink-strong">Future Paths:</span> You can mainstream into a higher‑level yeshiva or live as a ben Torah in the professional world with a disciplined seder and internal yiras Shamayim.</p>
-            <p className="text-sm bg-white/60 border border-[#dfddd6] rounded-xl p-5 ink-muted"><span className="text-gold-strong font-semibold">Goal Recapped:</span> Stand each talmid firmly—derech halimud, disciplined seder, inner yiras Shamayim.</p>
+            <p>
+              <span className="font-semibold ink-strong">
+                Independent Learning:
+              </span>{" "}
+              You can prepare Gemara, Rashi and Tosfos with clarity, trace the
+              structure of a sugya, engage Rishonim and Acharonim responsibly
+              and articulate the sevara with precision.
+            </p>
+            <p>
+              <span className="font-semibold ink-strong">Advanced Level:</span>{" "}
+              You are ready for advanced mainstream yeshiva shiurim and
+              demanding chavrusos; the{" "}
+              <span className="italic">derech halimud</span> has become your own
+              process.
+            </p>
+            <p>
+              <span className="font-semibold ink-strong">Future Paths:</span>{" "}
+              You can mainstream into a higher‑level yeshiva or live as a ben
+              Torah in the professional world with a disciplined seder and
+              internal yiras Shamayim.
+            </p>
+            <p className="text-sm bg-white/60 border border-[#dfddd6] rounded-xl p-5 ink-muted">
+              <span className="text-gold-strong font-semibold">
+                Goal Recapped:
+              </span>{" "}
+              Stand each talmid firmly—derech halimud, disciplined seder, inner
+              yiras Shamayim.
+            </p>
           </div>
         </div>
       </section>
