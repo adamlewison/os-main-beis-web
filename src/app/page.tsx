@@ -61,7 +61,7 @@ export default function Home() {
     },
     {
       name: "Rabbi Avrohom Connack",
-      title: "Mashgiach / Bekius Head",
+      title: "Maggid Shiur",
       image: "/images/rabbi-avrohom-connack.jpg",
       description:
         "Author of Beurei Avrohom. Decades developing disciplined, analytical lomdim.",
@@ -69,14 +69,14 @@ export default function Home() {
     },
     {
       name: "Rabbi Meir Dobkin",
-      title: "Mashgiach / Mussar & Bekius",
+      title: "Head of the Bekius Program",
       image: "/images/rabbis-and-talmidim-on-hike.jpg",
-      description: "Mussar & structured bekius—review habits that last.",
+      description: "Paragraph about rabbi dobkin goes here",
       color: "from-[#c2a25a] to-[#d4b468]",
     },
     {
       name: "Rabbi Yaron Shulman",
-      title: "Rebbi / Personal Guidance",
+      title: "Rebbi",
       image: "/images/whole-program-on-hike.jpg",
       description: "Chavrusos & hadracha toward independent sugya building.",
       color: "from-[#6f7c7e] to-[#3d5c55]",
@@ -147,25 +147,22 @@ export default function Home() {
         {mobileOpen && (
           <div className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10">
             <div className="px-4 py-6 space-y-4">
-              {["program", "learning", "rabbeim", "outcomes", "apply"].map(
-                (id) => (
-                  <a
-                    key={id}
-                    href={`#${id}`}
-                    onClick={() => setMobileOpen(false)}
-                    className="block text-gray-300 hover:text-gold-strong transition-colors font-medium py-2 capitalize"
-                  >
-                    {id}
-                  </a>
-                )
-              )}
+              {["program", "learning", "rabbeim", "outcomes"].map((id) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  onClick={() => setMobileOpen(false)}
+                  className="block text-gray-300 hover:text-gold-strong capitalize"
+                >
+                  {id}
+                </a>
+              ))}
               <a
-                href="https://ohr.edu/forms/start.php?progid=7"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block torah-btn-primary text-center px-6 py-3 rounded-full font-semibold"
+                href="#apply"
+                onClick={() => setMobileOpen(false)}
+                className="block torah-btn-primary px-5 py-3 rounded-full text-center font-semibold"
               >
-                Apply Online
+                Apply
               </a>
             </div>
           </div>
@@ -173,40 +170,61 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="relative h-screen min-h-[640px] flex items-center justify-center overflow-hidden bg-[linear-gradient(180deg,#0c0f11,#101416_65%,#141819)]">
-        <video
-          ref={videoRef}
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-            isVideoLoaded ? "opacity-100" : "opacity-0"
-          }`}
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/images/whole-program-on-hike.jpg"
-        >
-          <source src="/os-web-reel-resized.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,15,17,.55),rgba(12,15,17,.85))]" />
-        <div
-          className="absolute -inset-[40%] opacity-30"
-          style={{
-            background:
-              "radial-gradient(circle at 50% 50%,rgba(212,180,104,0.18),transparent 60%)",
-            transform: `translateY(${scrollY * 0.15}px)`,
-          }}
-        />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-black mb-10 heading-gradient-torah torah-heading-shadow">
-            Beis Midrash
-          </h1>
-          <a
-            href="#program"
-            className="torah-btn-primary px-10 py-4 rounded-full inline-block text-lg font-bold"
+      <section
+        className="relative h-[100dvh] w-full flex items-center"
+        id="top"
+      >
+        <div className="absolute inset-0">
+          {/* Fallback image while video loads */}
+          {!isVideoLoaded && (
+            <Image
+              src="/images/fallback.png"
+              alt="Beis Midrash"
+              fill
+              priority
+              className="object-cover object-center animate-fade-in"
+            />
+          )}
+          <video
+            ref={videoRef}
+            className={`w-full h-full object-cover object-center transition-opacity duration-700 ${
+              isVideoLoaded ? "opacity-100" : "opacity-0"
+            }`}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/images/fallback.png"
           >
-            Learn More
-          </a>
+            <source src="/os-web-reel-resized.mp4" type="video/mp4" />
+          </video>
+          <div
+            className={`absolute inset-0 bg-black/60 transition-opacity duration-700 ${
+              isVideoLoaded ? "opacity-30" : "opacity-70"
+            }`}
+          />
         </div>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex">
+          <div className="w-full md:w-1/2 pr-0 md:pr-8 flex flex-col justify-center">
+            <h1 className="text-4xl md:text-6xl font-black mb-8 leading-tight heading-gradient-torah torah-heading-shadow text-left">
+              Beis Midrash
+            </h1>
+            <div className="flex items-center gap-6">
+              <a
+                href="#program"
+                className="torah-btn-primary px-8 py-4 rounded-full inline-block text-base md:text-lg font-bold"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+          <div className="hidden md:block md:w-1/2" aria-hidden="true" />
+        </div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-16 md:h-24 bg-gradient-to-b from-transparent via-[#141819]/20 to-[#f5f5f2]/60"
+        />
       </section>
 
       {/* Program */}
@@ -325,59 +343,88 @@ export default function Home() {
       {/* Rabbeim */}
       <section
         id="rabbeim"
-        className="py-32 px-4 relative z-10 bg-[linear-gradient(180deg,#101416,#141819)]"
+        className="py-40 px-4 relative z-10 bg-[linear-gradient(180deg,#101416,#141819)]"
       >
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-black mb-16 text-center heading-gradient-torah torah-heading-shadow">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-black mb-24 text-center heading-gradient-torah torah-heading-shadow">
             The Rabbeim
           </h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            {rabbeim.map((rebbe, index) => (
-              <div
-                key={index}
-                ref={(el) => {
-                  rabbeimCardRefs.current[index] = el;
-                }}
-                data-index={index}
-                className={`backdrop-blur-xl bg-white/5 rounded-[2.25rem] overflow-hidden border border-white/10 hover:border-gold-strong/50 transition-all duration-700 group relative ${
-                  visibleRabbeim.has(index)
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-10"
-                }`}
-                style={{
-                  transitionDelay: visibleRabbeim.has(index)
-                    ? `${index * 80}ms`
-                    : "0ms",
-                }}
-              >
-                <div className="relative h-80 bg-slate-900 overflow-hidden">
+          <div className="space-y-28">
+            {rabbeim.map((rebbe, index) => {
+              const reverse = index % 2 === 1;
+              return (
+                <div
+                  key={index}
+                  ref={(el) => {
+                    rabbeimCardRefs.current[index] = el;
+                  }}
+                  data-index={index}
+                  className={`flex flex-col md:grid md:grid-cols-12 gap-10 md:gap-14 items-center transition-all duration-700 ${
+                    visibleRabbeim.has(index)
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-10"
+                  }`}
+                  style={{
+                    transitionDelay: visibleRabbeim.has(index)
+                      ? `${index * 90}ms`
+                      : "0ms",
+                  }}
+                >
+                  {/* Image */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-br ${rebbe.color} opacity-25 group-hover:opacity-35 transition-opacity duration-500 z-10`}
-                  />
-                  <Image
-                    src={rebbe.image}
-                    alt={rebbe.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-5 py-2 rounded-full text-slate-900 font-bold text-[11px] shadow">
-                    {rebbe.title.split(" ")[0]}
+                    className={`${
+                      reverse ? "md:col-start-7 md:col-span-6" : "md:col-span-6"
+                    } w-full relative`}
+                  >
+                    <div className="relative aspect-[5/3] md:aspect-[4/3] overflow-hidden rounded-3xl ring-1 ring-white/10 shadow-[0_4px_40px_-8px_rgba(0,0,0,0.65)]">
+                      <Image
+                        src={rebbe.image}
+                        alt={rebbe.name}
+                        fill
+                        className="object-cover object-center transition-transform duration-[1600ms] ease-out hover:scale-[1.05]"
+                        sizes="(max-width:768px) 100vw, 50vw"
+                        priority={index === 0}
+                      />
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${rebbe.color} opacity-25 mix-blend-overlay`}
+                      />
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.12),transparent_65%)]" />
+                      <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-[#101416] via-[#101416]/40 to-transparent" />
+                      <div className="absolute top-4 left-4 bg-white/85 backdrop-blur-sm px-5 py-2 rounded-full text-slate-900 font-semibold text-[11px] tracking-wide shadow">
+                        {rebbe.title.split(" ")[0]}
+                      </div>
+                    </div>
+                  </div>
+                  {/* Text */}
+                  <div
+                    className={`${
+                      reverse
+                        ? "md:col-start-1 md:col-span-6 md:order-first"
+                        : "md:col-span-6"
+                    } w-full`}
+                  >
+                    <div className={`max-w-xl ${reverse ? "md:ml-auto" : ""}`}>
+                      <div className="mb-5 h-1 w-24 rounded-full bg-gradient-to-r from-[#d4b468] via-[#c2a966] to-transparent" />
+                      <h3 className="text-3xl md:text-4xl font-black mb-5 heading-gradient-torah torah-heading-shadow">
+                        {rebbe.name}
+                      </h3>
+                      <p className="text-xs tracking-wide font-semibold text-gold-strong/90 uppercase mb-6">
+                        {rebbe.title}
+                      </p>
+                      <p className="text-[15px] md:text-base leading-relaxed text-gray-300/90 font-light">
+                        {rebbe.description}
+                        <span className="block mt-4 text-gray-400/80">
+                          Personal hadrachah is woven directly into seder and
+                          chazarah; the relationship is sustained, not episodic.
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div className="p-8">
-                  <h3 className="text-3xl font-black mb-2 text-white">
-                    {rebbe.name}
-                  </h3>
-                  <p className="text-xs uppercase tracking-wide text-gold-strong mb-4 font-semibold">
-                    {rebbe.title}
-                  </p>
-                  <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                    {rebbe.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
+          <div className="mt-32 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
         </div>
       </section>
 
